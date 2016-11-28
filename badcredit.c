@@ -3,8 +3,9 @@
 
 int main()
 {
-    long long card_num, count_card_num, count_card_num2;
+    long long card_num, count_card_num, count_card_num2, first_num;
     int count_num = 0, i = 0;
+    int digit[16], sum = 0, mult_2, digit2[16], sum2 = 0, total;
 
     printf("Number: ");
     card_num = GetLongLong();
@@ -17,16 +18,14 @@ int main()
         ++count_num;
     }
 
-    int digit[8], sum = 0, mult_2, digit2[8], sum2 = 0, total, first_num;
-
-    first_num = digit[7];
-
     card_num /= 10;
 
     for (i = 0; i < 8; i++)
     {
         digit[i] = card_num % 10;
         card_num /= 100;
+
+        first_num = digit[7];
 
         mult_2 = digit[i] * 2;
         digit[i] = mult_2 % 10;
